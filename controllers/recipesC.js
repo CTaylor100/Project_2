@@ -29,6 +29,15 @@ router.get('/new', (req, res) => {
     res.render('pages/New.jsx');
 });
 
+//DELETE ROUTE ==============================================================================
+router.delete('/:id', (req, res) => {
+    Recipes.findByIdAndRemove(req.params.id, (err, data) => {  
+        // console.log(req.params.id);                              //This is the MongoDB '_id'
+        // console.log(data);                                       //This is the full document that is getting removed from the DB
+        res.redirect('/recipes');
+    });
+});
+
 //UPDATE ROUTE ==============================================================================
 router.put('/:id', (req, res) => {                                  //This route is called upon submission of edits on the Edit.jsx page
     Recipes.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, data) => {     
