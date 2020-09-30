@@ -24,6 +24,12 @@ class Layout extends React.Component {
                                 <input type='text' placeholder='Search' />
                             </form>
                         </div>
+                        <div>
+                            <a href='/recipes'>HOME</a>
+                        </div>
+                        <div>
+                            <a href='/recipes/new'>ADD RECIPE</a>
+                        </div>
                     </nav>
                     <div className = 'entire'>
                         {this.props.children}                   

@@ -5,8 +5,18 @@ class Show extends React.Component {
     render() {
         return (                        
             <Layout>
-                <div className='vert'>                       
-                    <h1 className ='entire'>{this.props.recipe.name}</h1> 
+                <div className='vert'>    
+                    <div className='across userArea'>
+                        <h1>{this.props.recipe.name}</h1> 
+                        <div className='across'>
+                            <a className='zero' href={`/recipes/${this.props.recipe._id}/edit`}>
+                                <button className='blackButton'>EDIT</button>
+                            </a>
+                            <form className='zero' action={`/recipes/${this.props.recipe._id}?_method=DELETE`} method='POST'>
+                                <input className='blackButton' type='submit' value='DELETE' />
+                            </form>
+                        </div>
+                    </div>                   
                     <div className='across'>
                         <div className='card'>
                             <img src={`${this.props.recipe.images[0]}`} />

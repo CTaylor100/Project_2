@@ -31,7 +31,8 @@ nav {
 .userArea {
     justify-content: space-between;
 }
-.userArea > a {
+
+a {
     text-decoration: none;
     color: white;
     font-size: 12px;
@@ -89,4 +90,29 @@ h1 {
 h5 {
     margin: 2px;
     color: white;
+}
+.longInput > p {
+    margin: 2px;
+}
+
+.longInput > input {
+    min-width: 300px;
+}
+
+.addIng, .addDirect {
+    padding: 10px;
+}
+
+.zero {
+    margin: 0;
+    padding: 0;
+}
+
+.blackButton {
+    width: 80px;
+    border-radius: 3px;
+    margin: 35px 10px 10px 10px;
+    background-color: black;
+    color: white;
+
 }
