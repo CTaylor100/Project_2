@@ -22,7 +22,7 @@ app.use(methodOverride("_method"));
 
 
 //Routes & Routers
-app.get('/', (req, res) => { res.send('working project2'); });
+app.get('/', (req, res) => { res.send('working store'); });
 app.use('/recipes', recipesRouter);
 
 //App Listener
