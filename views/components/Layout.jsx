@@ -15,10 +15,18 @@ class Layout extends React.Component {
                     {/* <h1>{this.props.title}</h1>*/}
                     <nav className='vert'>
                         <div className='logo'>FOODIE</div>
-                        <div className='across userArea'>
-                            <a href='#'>Sign In</a>
-                            <a href='#'>Register</a>
-                        </div>
+                        { (this.props.logged !== true) ?
+                            <div className='across userArea'>
+                                <a href='/users/signin'>Sign In</a>
+                                <a href='/users/signup'>Register</a>
+                            </div> :
+                            <div className='across userArea'>
+                                <a href='#'>{this.props.user.username}</a>
+                                <form action='/users/signout?_method=DELETE' method='POST'>
+                                    <input className='logOut' type="submit" value="Log Out" />
+                                </form>
+                            </div> 
+                        }
                         <div className='search'>
                             <form>
                                 <input type='text' placeholder='Search' />

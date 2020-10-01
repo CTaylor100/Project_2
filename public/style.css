@@ -32,12 +32,14 @@ nav {
     justify-content: space-between;
 }
 
-a {
+a, .logOut {
     text-decoration: none;
     color: white;
     font-size: 12px;
     margin: 10px 5px;
     overflow: auto;
+    background-color: black;
+    border: none;
 }
 
 .search {
@@ -99,6 +101,20 @@ h5 {
     min-width: 300px;
 }
 
+.userInput > p {
+    font-size: 16px;
+    min-width: 120px;
+    margin: 2px;
+}
+
+.userInput {
+    margin: 2px;
+}
+
+.topMargin {
+    margin: 50px 0 0 0;
+}
+
 .addIng, .addDirect {
     padding: 10px;
 }
@@ -106,6 +122,7 @@ h5 {
 .zero {
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 .blackButton {

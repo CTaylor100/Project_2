@@ -4,7 +4,7 @@ const Layout = require('../components/Layout');
 class Index extends React.Component {   
     render() {
         return (                        
-            <Layout>
+            <Layout logged={this.props.logged} user={this.props.user}>
                 <div>                       
                     <h1>All Recipes</h1> 
                     <div className='across'> {this.props.recipes.map((recipe, i) => {

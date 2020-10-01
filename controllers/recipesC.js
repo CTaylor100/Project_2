@@ -8,9 +8,13 @@ const seed = require('../models/seedM');
 //INDEX ROUTE ===============================================================================
 router.get('/', (req, res) => { 
     Recipes.find({}, (err, allResults) => {
+        console.log(req.session);
         res.render('pages/Index', {
-            recipes: allResults
+            recipes: allResults, 
+            user: req.session.currentUser,
+            logged: req.session.loggedIn
         });
+        
     });
     // res.render('pages/Home');
     // res.send('working project2 router'); 
