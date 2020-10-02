@@ -31,7 +31,10 @@ app.use(session({
 
 
 //Routes & Routers
-app.get('/', (req, res) => { res.send('working foodie site'); });
+app.get('/', (req, res) => { 
+    // res.send('working foodie site');
+    res.redirect('/recipes');
+});
 app.use('/recipes', recipesRouter);
 app.use('/users', usersRouter);
 
