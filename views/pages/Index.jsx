@@ -7,7 +7,7 @@ class Index extends React.Component {
             <Layout logged={this.props.logged} user={this.props.user}>
                 <div>                       
                     <h1>All Recipes</h1> 
-                    <div className='across'> {this.props.recipes.map((recipe, i) => {
+                    <div className='across wrap'> {this.props.recipes.map((recipe, i) => {
                         return (
                             <div className='card' key={recipe._id}>
                                 <a href={`/recipes/${recipe._id}`}><img src={`${recipe.images[0]}`} /></a>

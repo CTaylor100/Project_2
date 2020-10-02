@@ -14,7 +14,7 @@ const usersRouter = require('./controllers/usersC');
 
 //Global Configuration & Connection
 const mongoURI = process.env.MONGO + process.env.DB;            
-mongoose.connect((mongoURI), { useNewUrlParser: true, useUnifiedTopology: true});      
+mongoose.connect((mongoURI), { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});      
 
 //Middlewear
 app.use(express.static('public'));
@@ -32,8 +32,8 @@ app.use(session({
 
 //Routes & Routers
 app.get('/', (req, res) => { 
-    // res.send('working foodie site');
-    res.redirect('/recipes');
+    res.send('working foodie site');
+    // res.redirect('/recipes');
 });
 app.use('/recipes', recipesRouter);
 app.use('/users', usersRouter);

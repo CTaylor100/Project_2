@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CTaylor100/Project_2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "bulma": "^0.9.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

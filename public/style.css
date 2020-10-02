@@ -57,7 +57,7 @@ input {
 }
 
 .card {
-    width: 25%;
+    width: 20%;
     min-width: 10em;
     max-width: 100%;
     margin: 10px;
@@ -67,6 +67,10 @@ input {
     border-radius: 5px; */
     position: relative;
     background-color: black;
+}
+
+.wrap {
+    flex-wrap: wrap;
 }
 
 .ingredients {
@@ -80,11 +84,10 @@ input {
 }
 
 img {
-    width: 100%;
+    width: 96%;
     height: 200px;
     object-fit: cover;
 }
-
 
 h1 {
     margin: 10px;

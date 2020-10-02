@@ -26,7 +26,7 @@ class Show extends React.Component {
                             <ul> 
                                 {this.props.recipe.ingredients.map((ingredient, i) => {
                                     return (
-                                        <li>{ingredient}</li>
+                                        <li key={i}>{ingredient}</li>
                                     )
                                 })}
                             </ul>
@@ -37,7 +37,7 @@ class Show extends React.Component {
                         <ol> 
                             {this.props.recipe.directions.map((direction, i) => {
                                 return (
-                                    <li>{direction}</li>
+                                    <li key={i}>{direction}</li>
                                 )
                             })}
                         </ol>

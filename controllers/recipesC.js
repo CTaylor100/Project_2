@@ -4,17 +4,18 @@ const router = Router();
 const Recipes = require('../models/recipesM');  
 const seed = require('../models/seedM');
 
+
 //ALL ROUTES ================================================================================
 //INDEX ROUTE ===============================================================================
 router.get('/', (req, res) => { 
+    // console.log('path working');
     Recipes.find({}, (err, allResults) => {
-        console.log(req.session);
+        // console.log(req.session);
         res.render('pages/Index', {
             recipes: allResults, 
             user: req.session.currentUser,
             logged: req.session.loggedIn
         });
-        
     });
     // res.render('pages/Home');
     // res.send('working project2 router'); 
@@ -44,6 +45,12 @@ router.delete('/:id', (req, res) => {
 
 //UPDATE ROUTE ==============================================================================
 router.put('/:id', (req, res) => {                                  //This route is called upon submission of edits on the Edit.jsx page
+    let directions = req.body.directions;
+    let newList =[];
+    for (let direction of directions) {
+        (direction !== '') ? newList.push(direction) : null;
+    }
+    req.body.directions = newList;
     Recipes.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, data) => {     
         // console.log(req.params.id);                              //This is the MongoDB '_id'
         // console.log(req.body);                                   //This is the full document inclusive of edits sent to the DB
@@ -54,7 +61,12 @@ router.put('/:id', (req, res) => {                                  //This route
 
 //CREATE ROUTE ==============================================================================
 router.post('/', (req, res) => {   
-    console.log(req.body); 
+    let directions = req.body.directions;
+    let newList =[];
+    for (let direction of directions) {
+        (direction !== '') ? newList.push(direction) : null;
+    }
+    req.body.directions = newList;
     Recipes.create(req.body, (err, newRecipe) => {
         res.redirect('/recipes');
     });
@@ -73,9 +85,8 @@ router.get('/:id/edit', (req, res) => {                             //This route
 //SHOW ROUTE ================================================================================
 router.get('/:id', (req, res) => {                                  //This route is called when a product image is clicked on the Index.jsx page
     Recipes.findById(req.params.id, (err, results) => { 
-        console.log(req.params.id);
-        console.log(results);
-        console.log(1);
+        // console.log(req.params.id);
+        // console.log(results);
         res.render('pages/Show.jsx', {
             recipe: results  
         });

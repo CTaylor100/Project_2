@@ -12,7 +12,6 @@ class Layout extends React.Component {
                     <link rel='stylesheet' href='/style.css'></link>   
                 </head>
                 <body className='across'>
-                    {/* <h1>{this.props.title}</h1>*/}
                     <nav className='vert'>
                         <div className='logo'>FOODIE</div>
                         { (this.props.logged !== true) ?
@@ -39,9 +38,9 @@ class Layout extends React.Component {
                             <a href='/recipes/new'>ADD RECIPE</a>
                         </div>
                     </nav>
-                    <div className = 'entire'>
+                    {/* <div className = 'entire'> */}
                         {this.props.children}                   
-                    </div>
+                    {/* </div> */}
                 </body>
             </html>
         );
